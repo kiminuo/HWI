@@ -42,16 +42,16 @@ ENV BUILD_TIME="00:00:00"
 RUN eval "$(pyenv init --path)" && eval "$(pyenv virtualenv-init -)" && cat /opt/reproducible-python.diff | pyenv install -kp 3.9.7
 
 RUN dpkg --add-architecture i386
-RUN wget -nc https://dl.winehq.org/wine-builds/winehq.key
-RUN apt-key add winehq.key
-RUN echo "deb https://dl.winehq.org/wine-builds/debian/ stretch main" >> /etc/apt/sources.list
-RUN apt-get update
-RUN apt-get install --install-recommends -y \
-    wine-stable-amd64 \
-    wine-stable-i386 \
-    wine-stable \
-    winehq-stable \
-    p7zip-full
+#RUN wget -nc https://dl.winehq.org/wine-builds/winehq.key
+#RUN apt-key add winehq.key
+#RUN echo "deb https://dl.winehq.org/wine-builds/debian/ stretch main" >> /etc/apt/sources.list
+#RUN apt-get update
+#RUN apt-get install --install-recommends -y \
+#    wine-stable-amd64 \
+#    wine-stable-i386 \
+#    wine-stable \
+#    winehq-stable \
+#    p7zip-full
 
 ENV LC_ALL=C.UTF-8
 ENV LANG=C.UTF-8
